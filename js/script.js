@@ -1,8 +1,15 @@
 
 // Fonction appelée lors du click du bouton
 function start() {
+
+  let city = "paris";
+
+  if (document.getElementById('city-input').value)
+
+  city = document.getElementById('city-input').value;
+
   // Création de l'objet apiWeather
-  const apiWeather = new API_WEATHER();
+  const apiWeather = new API_WEATHER(city);
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
@@ -10,8 +17,6 @@ function start() {
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;
-
-      //Récupère le nom de la ville
 
       // On récupère l'information principal
       const main = data.weather[0].main;
