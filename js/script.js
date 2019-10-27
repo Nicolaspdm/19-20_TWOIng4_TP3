@@ -1,9 +1,11 @@
 
 // Fonction appelée lors du click du bouton
-function start() {
+function getThreeDayForecast() {
 
+//ville par défault = Paris
   let city = "paris";
 
+// On récupère la valeur de la text-box pour changer la requête
   if (document.getElementById('city-input').value)
 
   city = document.getElementById('city-input').value;
@@ -13,7 +15,7 @@ function start() {
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
-    .fetchTodayForecast()
+    .fetch4daysForecast()
     .then(function(response) {
       // Récupère la donnée d'une API
       const data = response.data;

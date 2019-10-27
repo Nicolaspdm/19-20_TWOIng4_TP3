@@ -16,10 +16,11 @@ class API_WEATHER{
 
   // Faire la requete à l'API openweathermap
   // Retourne une promise
-  fetchTodayForecast(){
+  fetch4daysForecast(){
     return axios
-    .get(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}`, {
-      crossdomain: true
+    .get(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}&cnt=4`, {
+
+        crossdomain: true
     })
   }
   // Retourne l'element HTML de l'icon symbolisant la méteo.
